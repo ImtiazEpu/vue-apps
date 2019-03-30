@@ -7,7 +7,7 @@
 ``` bash
 # install dependencies
 npm install
-or
+#or
 yarn install
 
 # serve with hot reload at localhost:8080
