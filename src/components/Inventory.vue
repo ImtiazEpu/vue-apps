@@ -1,25 +1,29 @@
 <template>
     <div class="row">
-        <div class="card mb-3 shadow-sm" style="width:18rem">
-            <img data-src="holder.js/100px255?theme=social&text=Thumbnail">
+        <div v-for="(item, index) in items" :key="index" class="card mb-3 ml-3 shadow-sm" style="width:16rem">
+            <img :src="item.photo">
             <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">{{item.title}}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <button @click="addToCart(item)" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
                     </div>
-                    <small class="text-muted">9 mins</small>
+                    <strong class="text-muted">${{item.price}}</strong>
                 </div>
             </div>
-    </div>
+        </div>
     </div>
 </template>
 
 <script>
-export default {
-
-}
+    export default {
+        props:['items'],
+        methods:{
+            addToCart(item){
+                this.$emit('newItemAdded', item)
+            }
+        }
+    }
 </script>
 
 <style>
