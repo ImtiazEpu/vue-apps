@@ -1,6 +1,6 @@
 <template>
      <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Vue Store</a>
+        <router-link class="navbar-brand" :to="{path:'/'}">Vue Store</router-link>
         <form @submit.prevent="search" class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" v-model="keyword">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import axios from "axios";
     export default {
         data(){
             return{
@@ -17,7 +18,12 @@
         },
         methods:{
             search(){
-                this.$emit('search', this.keyword)
+               var self= this
+               axios.get('http://localhost:3000/search/'+ this.keyword).then(response =>{
+                   self.keyword = response.data
+                   //console.log(response.data)
+                   
+               })
             }
         }
     }

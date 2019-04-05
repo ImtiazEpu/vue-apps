@@ -1,5 +1,11 @@
 <template>
   <div id="app">
+    <!-- <router-link :to="{path:'/'}">Home</router-link>
+    <router-link :to="{path:'/test/1'}">Test 1</router-link>
+    <router-link :to="{path:'/test/2'}">Test 2</router-link>
+    <router-link :to="{path:'/test/3'}">Test 3</router-link>
+    
+    <router-view></router-view> -->
      <navbar @search="search"></navbar>
       <main role="main">
         <hero></hero>
@@ -7,7 +13,8 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-9">
-                  <inventory @newItemAdded="addCartItem" :items= "items"></inventory>
+                  <router-view></router-view>
+                  <!-- <inventory @newItemAdded="addCartItem" :items= "items"></inventory> -->
                 </div>
                 <div class="col-md-3 mb-4">
                   <cart :items="cart"></cart>
@@ -22,7 +29,7 @@
 <script>
 import Navbar from './components/Navbar'
 import Cart from './components/Cart'
-import Inventory from './components/Inventory'
+//import Inventory from './components/Inventory'
 import Hero from './components/Hero'
 import data from './data.js'
 
@@ -30,7 +37,7 @@ export default {
   components:{
     Navbar,
     Cart,
-    Inventory,
+    //Inventory,
     Hero
   },
   data(){
