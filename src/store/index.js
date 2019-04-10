@@ -10,5 +10,15 @@ export const storage = {
         getCart(state) {
             return state.cart
         }
+    },
+
+    mutations: {
+        addToCart(state, playload) {
+            state.cart.push(playload)
+        },
+        removeItem(state, playload) {
+            state.cart.splice(playload, 1)
+        }
     }
+
 }
