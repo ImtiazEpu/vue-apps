@@ -13,6 +13,9 @@ export const storage = {
     },
 
     mutations: {
+        setInventory(state, playload) {
+            state.inventory = playload
+        },
         addToCart(state, playload) {
             state.cart.push(playload)
         },

@@ -10,7 +10,7 @@
                 <div class="container">
                     <div class="row m-0">
                         <div class="col-lg-5 left-side-product-box pb-3">
-                            <img :src="item.photo" class="border p-3">
+                            <lazy-img :src="item.photo" class="border p-3" />
                         </div>
                         <div class="col-lg-7">
                             <div class="right-side-pro-detail border p-3 m-0">
@@ -32,7 +32,7 @@
                                     <div class="col-lg-12 mt-3">
                                         <div class="row">
                                             <div class="col-lg-12 pb-2">
-                                                <a href="#" class="btn btn-danger btn-block">Add To Cart</a>
+                                                <button @click="addToCart(item)" class="btn btn-danger btn-block">Add To Cart</button>
                                             </div>
                                         </div>
                                     </div>
@@ -64,7 +64,13 @@ export default {
             axios.get('http://localhost:3000/item/'+this.$route.params.id).then(response =>{
                 self.item = response.data
             })
-        }
+        },
+        addToCart(item){
+                this.$store.commit('addToCart',item)
+            },
+        removeItem(index){
+            this.$store.commit('removeItem', index)
+          }
     }
 }
 </script>
