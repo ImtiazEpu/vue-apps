@@ -18,6 +18,10 @@
             <span>Total (USD)</span>
             <strong>${{total}}</strong>
         </li>
+        <li v-if="items.length >0" class="list-group-item d-flex justify-content-between">
+            <button @click="checkout" class="btn btn-block btn-success" >Checkout</button>
+        </li>
+
     </ul>             
 </template>
 
@@ -32,12 +36,17 @@ export default {
             this.items.forEach(item => {
               total += parseFloat(item.price)
             })
-            return total
+            return total.toFixed(2)
           }
         },
         methods:{
             removeItem(index){
-            this.$store.commit('removeItem', index)
+            this.$store.dispatch('removeItem', index)
+          },
+          checkout(){
+            if(confirm('Are you sure to Checkout?')){
+              this.$store.dispatch('clearCart')
+            }
           }
         }
 }

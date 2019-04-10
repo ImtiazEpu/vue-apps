@@ -43,9 +43,9 @@ export default {
                 cart: []
             };
         },
-        mounted() {
-            this.items = data;
-        },
+        // mounted() {
+        //     this.items = data;
+        // },
         methods: {
             search(keyword) {
                 this.items = data.filter(item => {

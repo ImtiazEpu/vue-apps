@@ -66,10 +66,10 @@ export default {
             })
         },
         addToCart(item){
-                this.$store.commit('addToCart',item)
+                this.$store.dispatch('addToCart',item)
             },
         removeItem(index){
-            this.$store.commit('removeItem', index)
+            this.$store.dispatch('removeItem', index)
           }
     }
 }

@@ -13,14 +13,14 @@ import axios from "axios";
     export default {
         data(){
             return{
-            keyword:''
+            keyword: ''
             }
         },
         methods:{
             search(){
                var self= this
                axios.get('http://localhost:3000/search/'+ this.keyword).then(response =>{
-                   self.keyword = response.data
+                   self.$store.dispatch('setInventory', response.data)
                    //console.log(response.data)
                    
                })

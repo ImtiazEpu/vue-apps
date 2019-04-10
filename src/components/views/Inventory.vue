@@ -25,7 +25,7 @@ import axios from 'axios'
     export default {
         data(){
             return{
-                loading:true,
+                loading:true
             }
         },
         computed:{
@@ -38,12 +38,12 @@ import axios from 'axios'
         },
         methods:{
             addToCart(item){
-                this.$store.commit('addToCart',item)
+                this.$store.dispatch('addToCart',item)
             },
             fetchInventory(){
                 var self = this
                 axios.get('http://localhost:3000/items').then(response =>{
-                        self.$store.commit('setInventory', response.data)
+                        self.$store.dispatch('setInventory', response.data)
                         self.loading =false                          
                     //console.log(response)    
                 })
