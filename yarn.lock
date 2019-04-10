@@ -6015,6 +6015,11 @@ vue-hot-reload-api@^2.2.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
   integrity sha512-KmvZVtmM26BQOMK1rwUZsrqxEGeKiYSZGA7SNWE6uExx8UX/cj9hq2MRV/wWC3Cq6AoeDGk57rL9YMFRel/q+g==
 
+vue-lazy-image-loading@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/vue-lazy-image-loading/-/vue-lazy-image-loading-1.1.5.tgz#248902dfbbbf9c7235e097b14e6d97c323431983"
+  integrity sha512-d6N1BRMHEkEuxlWdvGYpl4IfdzH4C9olBVjFjc7su4VD2DFdhIbsuQQlRwXWHRlD6F+YtBsnCkLEzPQ4WnB2ug==
+
 vue-loader@^13.3.0:
   version "13.7.3"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-13.7.3.tgz#e07440f78230a639d00ada4da7b96d0e9d62037f"

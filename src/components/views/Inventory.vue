@@ -2,7 +2,7 @@
     <div v-if="!loading" class="row">
         <div v-for="(item, index) in items" :key="index" class="card mb-3 ml-3 shadow-sm" style="width:16rem">
             <router-link tag="div" :to="{ path:'/item/'+item.id}">
-                <img :src="item.photo">
+                <lazy-img :src="item.photo"/>
             </router-link>
             <div class="card-body">
                 <router-link tag="div" :to="{ path:'/item/'+item.id}">

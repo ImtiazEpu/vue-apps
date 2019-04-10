@@ -29,36 +29,33 @@
 <script>
 import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
-//import Inventory from './components/Inventory'
 import Hero from "./components/Hero";
-import data from "./data.js";
 
 export default {
-    components: {
+        components: {
             Navbar,
             Cart,
-        //Inventory,
             Hero
-  },
-    data() {
-        return {
-            items: [],
-            cart: []
-        };
-    },
-  mounted() {
-    this.items = data;
-  },
-  methods: {
-    search(keyword) {
-        this.items = data.filter(item => {
-            return item.title.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
-      });
-    },
-    addCartItem(item) {
-      this.cart.push(item);
-    }
-  }
+        },
+        data() {
+            return {
+                items: [],
+                cart: []
+            };
+        },
+        mounted() {
+            this.items = data;
+        },
+        methods: {
+            search(keyword) {
+                this.items = data.filter(item => {
+                    return item.title.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
+                });
+            },
+            addCartItem(item) {
+            this.cart.push(item);
+            }
+        }
 };
 </script>
 
